@@ -571,26 +571,26 @@ img {
    ========================================================================== */
 .assembly-scroll-section {
   position: relative;
-  min-height: 250vh; /* Smooth extended disassembly journey */
-  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.9) 0%, #060911 100%);
+  min-height: 280vh; /* Smooth extended disassembly journey */
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, #060911 100%);
   border-top: 1px solid var(--border-glass);
   border-bottom: 1px solid var(--border-glass);
 }
 
 .assembly-sticky-stage {
   position: sticky;
-  top: var(--nav-height);
-  height: calc(100vh - var(--nav-height));
+  top: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding: 24px 0;
+  overflow: visible; /* Tidak memotong overflow elemen 3D */
+  padding: 40px 0;
 }
 
 .assembly-layout-grid {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
   align-items: center;
   width: 100%;
 }
@@ -599,8 +599,8 @@ img {
 .assembly-narrative {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  z-index: 10;
+  gap: 14px;
+  z-index: 20;
 }
 
 .assembly-status-badge {
@@ -620,18 +620,18 @@ img {
 .assembly-steps-indicator {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .assembly-step-item {
-  background: rgba(30, 41, 59, 0.4);
+  background: rgba(30, 41, 59, 0.35);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   cursor: pointer;
   transition: all var(--transition-normal);
 }
@@ -644,8 +644,8 @@ img {
 }
 
 .assembly-step-num {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
@@ -653,7 +653,8 @@ img {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -663,34 +664,37 @@ img {
 }
 
 .assembly-step-text h4 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 2px;
   color: var(--text-white);
 }
 
 .assembly-step-text p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  line-height: 1.35;
 }
 
 /* 3D Scene Viewport */
 .assembly-3d-viewport {
-  perspective: 1400px;
-  perspective-origin: 50% 50%;
-  height: 540px;
+  perspective: 1500px;
+  perspective-origin: 50% 45%;
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: visible;
 }
 
 .assembly-3d-stack {
-  width: 480px;
-  height: 300px;
+  width: 460px;
+  height: 260px;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(55deg) rotateZ(-28deg) rotateY(8deg);
+  transform: rotateX(54deg) rotateZ(-26deg) rotateY(6deg);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 /* Individual Floating Layers */
@@ -699,9 +703,9 @@ img {
   inset: 0;
   border-radius: var(--radius-lg);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
-  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -716,24 +720,29 @@ img {
   box-shadow: 0 25px 60px rgba(245, 158, 11, 0.3);
 }
 
-/* Base Styling per Layer */
+/* Base Color Themes per Layer */
+.assembly-layer.layer-6 {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.96) 100%);
+  z-index: 6;
+}
+.assembly-layer.layer-5 {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(15, 23, 42, 0.92) 100%);
+  z-index: 5;
+}
 .assembly-layer.layer-4 {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(30, 41, 59, 0.9) 100%);
   z-index: 4;
 }
-
 .assembly-layer.layer-3 {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(30, 41, 59, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(15, 23, 42, 0.92) 100%);
   z-index: 3;
 }
-
 .assembly-layer.layer-2 {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(15, 23, 42, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(15, 23, 42, 0.92) 100%);
   z-index: 2;
 }
-
 .assembly-layer.layer-1 {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(10, 14, 23, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.16) 0%, rgba(10, 14, 23, 0.96) 100%);
   z-index: 1;
 }
 
@@ -743,26 +752,28 @@ img {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
-  margin-bottom: 10px;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .layer-tag {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
 }
 
-.layer-4 .layer-tag { background: rgba(245, 158, 11, 0.2); color: var(--primary-gold-light); }
-.layer-3 .layer-tag { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-.layer-2 .layer-tag { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
-.layer-1 .layer-tag { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.layer-6 .layer-tag { background: rgba(245, 158, 11, 0.25); color: var(--primary-gold-light); }
+.layer-5 .layer-tag { background: rgba(236, 72, 153, 0.25); color: #f472b6; }
+.layer-4 .layer-tag { background: rgba(245, 158, 11, 0.25); color: var(--primary-gold-light); }
+.layer-3 .layer-tag { background: rgba(59, 130, 246, 0.25); color: #60a5fa; }
+.layer-2 .layer-tag { background: rgba(168, 85, 247, 0.25); color: #c084fc; }
+.layer-1 .layer-tag { background: rgba(16, 185, 129, 0.25); color: #34d399; }
 
 .layer-title-text {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-white);
   display: flex;
@@ -773,39 +784,39 @@ img {
 .layer-body-preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .mini-widget {
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-sm);
-  padding: 8px;
+  padding: 6px 4px;
   text-align: center;
 }
 
 .mini-widget span {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
 .mini-widget strong {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-white);
 }
 
 .layer-wireframe-lines {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 4px;
+  margin-top: 4px;
 }
 
 .wire-line {
-  height: 4px;
+  height: 3px;
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.08);
 }
@@ -818,7 +829,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 /* --- Client Logos Marquee / Grid --- */
@@ -1381,16 +1392,17 @@ img {
 
   .assembly-layout-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .assembly-3d-viewport {
-    height: 420px;
+    height: 400px;
+    perspective: 1100px;
   }
 
   .assembly-3d-stack {
     width: 380px;
-    height: 240px;
+    height: 220px;
   }
   
   .bento-grid {
@@ -1414,7 +1426,7 @@ img {
   }
   
   .clients-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1437,11 +1449,12 @@ img {
     border-bottom: 1px solid var(--border-glass);
     flex-direction: column;
     padding: 24px;
-    gap: 20px;
+    gap: 18px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: all var(--transition-normal);
+    z-index: 1001;
   }
   
   .nav-links.open {
@@ -1457,23 +1470,40 @@ img {
     transform: none;
     background: rgba(255, 255, 255, 0.03);
     box-shadow: none;
-    margin-top: 10px;
+    margin-top: 8px;
     width: 100%;
   }
 
   .assembly-scroll-section {
-    min-height: 180vh;
+    min-height: 220vh;
+  }
+
+  .assembly-sticky-stage {
+    padding: 20px 0;
   }
 
   .assembly-3d-viewport {
-    height: 360px;
-    perspective: 800px;
+    height: 320px;
+    perspective: 900px;
   }
 
   .assembly-3d-stack {
-    width: 300px;
-    height: 200px;
-    transform: rotateX(45deg) rotateZ(-20deg);
+    width: 290px;
+    height: 180px;
+    transform: rotateX(46deg) rotateZ(-18deg) scale(0.92);
+  }
+
+  .assembly-step-item {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .assembly-step-text h4 {
+    font-size: 0.82rem;
+  }
+
+  .assembly-step-text p {
+    font-size: 0.72rem;
   }
   
   .bento-grid {
@@ -1494,21 +1524,22 @@ img {
   }
   
   .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   
   .client-logo-card {
-    min-height: 64px;
-    padding: 10px 14px;
+    min-height: 100px;
+    padding: 16px 20px;
   }
   
   .cta-banner {
-    padding: 44px 20px;
+    padding: 36px 18px;
   }
   
   .hero-stats-row {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }

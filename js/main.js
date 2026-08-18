@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggleAssemblyBtn');
   const statusBadge = document.querySelector('.assembly-status-badge');
 
+  const layer6 = document.querySelector('.assembly-layer.layer-6');
+  const layer5 = document.querySelector('.assembly-layer.layer-5');
   const layer4 = document.querySelector('.assembly-layer.layer-4');
   const layer3 = document.querySelector('.assembly-layer.layer-3');
   const layer2 = document.querySelector('.assembly-layer.layer-2');
@@ -56,91 +58,107 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isManualDisassembled = false;
 
-  if (assemblySection && assemblyStack && layer4 && layer3 && layer2 && layer1) {
+  if (assemblySection && assemblyStack && layer6 && layer5 && layer4 && layer3 && layer2 && layer1) {
     
     // Function to apply progressive disassembly based on progress (0.0 to 1.0)
     const applyDisassemblyProgress = (progress) => {
-      // Progress Breakdown:
-      // [0.00 - 0.15]: Phase 0 -> Full Assembled Stack (Semua 4 Layer utuh menyatu)
-      // [0.15 - 0.40]: Phase 1 -> Layer 4 (Executive UI) terlepas, terbang ke atas dan memudar (Tersisa Layer 3, 2, 1)
-      // [0.40 - 0.65]: Phase 2 -> Layer 3 (Work Order) terlepas, terbang ke atas dan memudar (Tersisa Layer 2, 1)
-      // [0.65 - 0.90]: Phase 3 -> Layer 2 (Preventive) terlepas, terbang ke atas dan memudar (Tersisa Layer 1 - Core Database)
-      // [0.90 - 1.00]: Phase 4 -> Layer 1 Core Database terisolasi & bersinar terang di fondasi!
+      // 6 Phases:
+      // [0.00 - 0.12]: Full Assembled Stack (Semua 6 Layer Utuh)
+      // [0.12 - 0.28]: Phase 1 -> Layer 6 (Executive Dashboard) terangkat & memudar
+      // [0.28 - 0.44]: Phase 2 -> Layer 5 (Audit & Analytics) terangkat & memudar
+      // [0.44 - 0.60]: Phase 3 -> Layer 4 (Work Order & Ops) terangkat & memudar
+      // [0.60 - 0.76]: Phase 4 -> Layer 3 (Parts & Inventory) terangkat & memudar
+      // [0.76 - 0.90]: Phase 5 -> Layer 2 (Preventive Scheduler) terangkat & memudar
+      // [0.90 - 1.00]: Phase 6 -> Layer 1 (Master Data & Hierarchy Core) tersisa & bersinar di fondasi
 
-      if (progress <= 0.15) {
-        // Full Assembled: 4 Layer lengkap menyatu
+      if (progress <= 0.12) {
+        // Full 6 Layers
         updateActiveStep(0);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-layer-group text-gold"></i> Ekosistem Terpadu (4 Lapisan Aktif)';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-layer-group text-gold"></i> Ekosistem Terpadu (6 Lapisan Sistem Aktif)';
         
-        setLayerStyle(layer4, { z: 45, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
-        setLayerStyle(layer3, { z: 30, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
-        setLayerStyle(layer2, { z: 15, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer6, { z: 65, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer5, { z: 52, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer4, { z: 39, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer3, { z: 26, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer2, { z: 13, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
-      } else if (progress > 0.15 && progress <= 0.40) {
-        // Layer 4 Terangkat
-        const subProg = (progress - 0.15) / 0.25; // 0 to 1
+      } else if (progress > 0.12 && progress <= 0.28) {
+        // Layer 6 lifts off
+        const p = (progress - 0.12) / 0.16;
         updateActiveStep(1);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-chart-pie text-gold"></i> Layer 4: Executive Command Analytics';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-chart-pie text-gold"></i> Layer 6: Executive Command Analytics';
 
-        // Layer 4 flies away up & disappears
-        const l4Z = 45 + (subProg * 220);
-        const l4Y = -(subProg * 80);
-        const l4Opacity = Math.max(0, 1 - (subProg * 1.3));
-        const l4Scale = 1 + (subProg * 0.15);
-
-        setLayerStyle(layer4, { z: l4Z, y: l4Y, x: subProg * 30, opacity: l4Opacity, scale: l4Scale, filter: `blur(${subProg * 4}px)` });
-        setLayerStyle(layer3, { z: 30, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
-        setLayerStyle(layer2, { z: 15, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer6, { z: 65 + (p * 200), y: -(p * 70), x: p * 25, opacity: Math.max(0, 1 - (p * 1.3)), scale: 1 + (p * 0.12), filter: `blur(${p * 4}px)` });
+        setLayerStyle(layer5, { z: 52, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer4, { z: 39, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer3, { z: 26, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer2, { z: 13, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
-      } else if (progress > 0.40 && progress <= 0.65) {
-        // Layer 3 Terangkat
-        const subProg = (progress - 0.40) / 0.25;
+      } else if (progress > 0.28 && progress <= 0.44) {
+        // Layer 5 lifts off
+        const p = (progress - 0.28) / 0.16;
         updateActiveStep(2);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-clipboard-check text-gold"></i> Layer 3: Work Order & Field Operations';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-file-chart-column text-gold"></i> Layer 5: Audit & Compliance Analytics';
 
-        // Layer 4 sudah hilang
-        setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
-
-        // Layer 3 flies away up & disappears
-        const l3Z = 30 + (subProg * 200);
-        const l3Y = -(subProg * 70);
-        const l3Opacity = Math.max(0, 1 - (subProg * 1.3));
-        const l3Scale = 1 + (subProg * 0.12);
-
-        setLayerStyle(layer3, { z: l3Z, y: l3Y, x: subProg * 25, opacity: l3Opacity, scale: l3Scale, filter: `blur(${subProg * 4}px)` });
-        setLayerStyle(layer2, { z: 15, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer6, { z: 300, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer5, { z: 52 + (p * 180), y: -(p * 65), x: p * 20, opacity: Math.max(0, 1 - (p * 1.3)), scale: 1 + (p * 0.1), filter: `blur(${p * 4}px)` });
+        setLayerStyle(layer4, { z: 39, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer3, { z: 26, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer2, { z: 13, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
-      } else if (progress > 0.65 && progress <= 0.90) {
-        // Layer 2 Terangkat
-        const subProg = (progress - 0.65) / 0.25;
+      } else if (progress > 0.44 && progress <= 0.60) {
+        // Layer 4 lifts off
+        const p = (progress - 0.44) / 0.16;
         updateActiveStep(3);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-calendar-check text-gold"></i> Layer 2: Preventive Automation Engine';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-clipboard-check text-gold"></i> Layer 4: Field Operations & Work Order Hub';
 
-        // Layer 4 & 3 sudah hilang
-        setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
-        setLayerStyle(layer3, { z: 280, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer6, { z: 300, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer5, { z: 280, y: -90,  x: 35, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer4, { z: 39 + (p * 180), y: -(p * 60), x: p * 20, opacity: Math.max(0, 1 - (p * 1.3)), scale: 1 + (p * 0.1), filter: `blur(${p * 4}px)` });
+        setLayerStyle(layer3, { z: 26, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer2, { z: 13, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
-        // Layer 2 flies away up & disappears
-        const l2Z = 15 + (subProg * 180);
-        const l2Y = -(subProg * 60);
-        const l2Opacity = Math.max(0, 1 - (subProg * 1.3));
-        const l2Scale = 1 + (subProg * 0.1);
+      } else if (progress > 0.60 && progress <= 0.76) {
+        // Layer 3 lifts off
+        const p = (progress - 0.60) / 0.16;
+        updateActiveStep(4);
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-boxes-stacked text-gold"></i> Layer 3: Spare Parts & Inventory Control';
 
-        setLayerStyle(layer2, { z: l2Z, y: l2Y, x: subProg * 20, opacity: l2Opacity, scale: l2Scale, filter: `blur(${subProg * 4}px)` });
+        setLayerStyle(layer6, { z: 300, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer5, { z: 280, y: -90,  x: 35, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer4, { z: 260, y: -80,  x: 30, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer3, { z: 26 + (p * 160), y: -(p * 55), x: p * 15, opacity: Math.max(0, 1 - (p * 1.3)), scale: 1 + (p * 0.08), filter: `blur(${p * 4}px)` });
+        setLayerStyle(layer2, { z: 13, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+        setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
+
+      } else if (progress > 0.76 && progress <= 0.90) {
+        // Layer 2 lifts off
+        const p = (progress - 0.76) / 0.14;
+        updateActiveStep(5);
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-calendar-check text-gold"></i> Layer 2: Preventive & Automation Scheduler';
+
+        setLayerStyle(layer6, { z: 300, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer5, { z: 280, y: -90,  x: 35, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer4, { z: 260, y: -80,  x: 30, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer3, { z: 240, y: -70,  x: 25, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer2, { z: 13 + (p * 150), y: -(p * 50), x: p * 15, opacity: Math.max(0, 1 - (p * 1.3)), scale: 1 + (p * 0.08), filter: `blur(${p * 4}px)` });
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
       } else {
-        // Hanya tersisa Layer 1
-        updateActiveStep(3);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-database text-gold"></i> Layer 1: Master Database & Asset Core';
+        // Hanya tersisa Layer 1 (Master Data Core)
+        updateActiveStep(5);
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-database text-gold"></i> Layer 1: Master Database & Plant Hierarchy Core';
 
-        setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
-        setLayerStyle(layer3, { z: 280, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
-        setLayerStyle(layer2, { z: 250, y: -90,  x: 30, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
-        setLayerStyle(layer1, { z: 10,  y: 0,    x: 0,  opacity: 1, scale: 1.05, filter: 'none' });
+        setLayerStyle(layer6, { z: 300, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer5, { z: 280, y: -90,  x: 35, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer4, { z: 260, y: -80,  x: 30, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer3, { z: 240, y: -70,  x: 25, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer2, { z: 220, y: -60,  x: 20, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
+        setLayerStyle(layer1, { z: 15,  y: 0,    x: 0,  opacity: 1, scale: 1.05, filter: 'none' });
       }
     };
 
