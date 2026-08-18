@@ -135,15 +135,6 @@ Akses website di: **`http://localhost:3000`**
 
 ---
 
-## 📞 Kontak & Konsultasi
-
-- **WhatsApp**: [+62 812-xxxx-xxxx](https://wa.link/18xqmd)
-- **Email**: info@sigrax.com
-- **Instagram**: [@sigraxcmms](https://www.instagram.com/sigraxcmms)
-- **Portal Sistem**: [https://cmms.sigrax.com](https://cmms.sigrax.com/#)
-
----
-
 <div align="center">
-  <p>© 2026 Sigrax. All Rights Reserved. Crafted with pride in Indonesia.</p>
+  <p>© 2026 Sigrax CMMS. All Rights Reserved. Crafted with pride in Indonesia.</p>
 </div>
