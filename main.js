@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (progress <= 0.15) {
         // Full Assembled: 4 Layer lengkap menyatu
         updateActiveStep(0);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-layer-group text-gold"></i> Status: 4 Layer Utuh Menyatu (Full Ecosystem)';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-layer-group text-gold"></i> Ekosistem Terpadu (4 Lapisan Aktif)';
         
         setLayerStyle(layer4, { z: 45, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
         setLayerStyle(layer3, { z: 30, y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
@@ -78,10 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
       } else if (progress > 0.15 && progress <= 0.40) {
-        // Layer 4 Terlepas / Ejected (Berkurang 1, tersisa 3 Layer)
+        // Layer 4 Terangkat
         const subProg = (progress - 0.15) / 0.25; // 0 to 1
         updateActiveStep(1);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-arrow-up-from-bracket text-gold"></i> Disassembly: Layer 4 Terlepas (Tersisa 3 Layer)';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-chart-pie text-gold"></i> Layer 4: Executive Command Analytics';
 
         // Layer 4 flies away up & disappears
         const l4Z = 45 + (subProg * 220);
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
       } else if (progress > 0.40 && progress <= 0.65) {
-        // Layer 3 Terlepas / Ejected (Berkurang lagi, tersisa 2 Layer)
+        // Layer 3 Terangkat
         const subProg = (progress - 0.40) / 0.25;
         updateActiveStep(2);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-arrow-up-from-bracket text-gold"></i> Disassembly: Layer 3 Terlepas (Tersisa 2 Layer)';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-clipboard-check text-gold"></i> Layer 3: Work Order & Field Operations';
 
         // Layer 4 sudah hilang
         setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
@@ -114,10 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
       } else if (progress > 0.65 && progress <= 0.90) {
-        // Layer 2 Terlepas / Ejected (Berkurang lagi, tersisa 1 Layer Inti)
+        // Layer 2 Terangkat
         const subProg = (progress - 0.65) / 0.25;
         updateActiveStep(3);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-arrow-up-from-bracket text-gold"></i> Disassembly: Layer 2 Terlepas (Tersisa 1 Layer Inti)';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-calendar-check text-gold"></i> Layer 2: Preventive Automation Engine';
 
         // Layer 4 & 3 sudah hilang
         setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setLayerStyle(layer1, { z: 0,  y: 0, x: 0, opacity: 1, scale: 1, filter: 'none' });
 
       } else {
-        // Hanya tersisa Layer 1: Master Data Fondasi Terbuka Lebar
+        // Hanya tersisa Layer 1
         updateActiveStep(3);
-        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-database text-gold"></i> Fondasi Inti: Master Data Database Core';
+        if (statusBadge) statusBadge.innerHTML = '<i class="fas fa-database text-gold"></i> Layer 1: Master Database & Asset Core';
 
         setLayerStyle(layer4, { z: 300, y: -120, x: 50, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
         setLayerStyle(layer3, { z: 280, y: -100, x: 40, opacity: 0, scale: 1.2, filter: 'blur(8px)' });
