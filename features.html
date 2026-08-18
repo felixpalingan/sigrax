@@ -38,14 +38,15 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
 
   <header>
-    <nav class="site-navbar">
+    <nav class="site-navbar" aria-label="Navigasi Utama">
       <div class="container navbar-inner">
-        <a href="index.html" class="navbar-brand">
-          <img src="assets/brand/logo.png" alt="Sigrax CMMS" class="brand-logo" />
+        <a href="index.html" class="navbar-brand" aria-label="Sigrax CMMS Beranda">
+          <img src="assets/brand/logo.png" alt="Sigrax CMMS Logo" class="brand-logo" />
         </a>
-        <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <button class="mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
@@ -65,7 +66,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Page Header -->
     <section class="section" style="padding-top: calc(var(--nav-height) + 48px); padding-bottom: 32px;">
       <div class="container" style="text-align: center;">

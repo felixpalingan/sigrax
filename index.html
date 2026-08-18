@@ -50,15 +50,16 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
 
   <header>
-    <nav class="site-navbar">
+    <nav class="site-navbar" aria-label="Navigasi Utama">
       <div class="container navbar-inner">
-        <a href="index.html" class="navbar-brand">
-          <img src="assets/brand/logo.png" alt="Sigrax CMMS" class="brand-logo" />
+        <a href="index.html" class="navbar-brand" aria-label="Sigrax CMMS Beranda">
+          <img src="assets/brand/logo.png" alt="Sigrax CMMS Logo" class="brand-logo" />
         </a>
 
-        <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
+        <button class="mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </button>
 
@@ -87,7 +88,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
     <section class="hero-section">
       <div class="container">
@@ -110,19 +111,19 @@
 
             <div class="hero-stats-row">
               <div class="hero-stat-item">
-                <h4>-45%</h4>
-                <p>Downtime</p>
+                <h4 class="tabular-nums">-45%</h4>
+                <p>Downtime Mesin</p>
               </div>
               <div class="hero-stat-item">
-                <h4>100%</h4>
+                <h4 class="tabular-nums">100%</h4>
                 <p>PM Terjadwal</p>
               </div>
               <div class="hero-stat-item">
-                <h4>Rp 0</h4>
+                <h4 class="tabular-nums">Rp 0</h4>
                 <p>Lisensi Tahunan</p>
               </div>
               <div class="hero-stat-item">
-                <h4>24/7</h4>
+                <h4 class="tabular-nums">24/7</h4>
                 <p>Support Lokal</p>
               </div>
             </div>
