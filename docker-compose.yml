@@ -1,0 +1,7 @@
+services:
+  sigrax-web:
+    build: .
+    container_name: sigrax-landing-page
+    ports:
+      - "8080:80"
+    restart: unless-stopped

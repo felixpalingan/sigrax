@@ -1,0 +1,283 @@
+/* Navbar */
+.navbar {
+  background-color: #151515; /* Warna background */
+  transition: background-color 0.3s ease-in-out;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-nav {
+  margin-right: 0;
+}
+
+.navbar .nav-link {
+  color: white;
+  font-size: 17px;
+  position: relative;
+  padding-bottom: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0; /* Tidak ada garis saat tidak aktif */
+  height: 3px;
+  background-color: rgb(213, 177, 17); /* Warna kuning */
+  bottom: -8px;
+  left: 0;
+  border-radius: 10px; /* Menambahkan radius untuk garis bawah */
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-link.active::after {
+  width: 100%; /* Garis kuning penuh hanya pada link yang aktif */
+}
+
+.navbar .nav-link:hover {
+  color: rgb(213, 177, 17); /* Hanya teks berubah warna saat hover */
+}
+
+.navbar .nav-link.active {
+  color: rgb(213, 177, 17); /* Teks juga tetap kuning pada link aktif */
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .navbar .nav-link {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar .nav-link {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .navbar {
+    padding: 15px 10px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  z-index: -1;
+}
+
+.title {
+  font-size: 3rem; /* Ukuran font untuk desktop */
+  margin-top: 100px;
+}
+
+.lighter {
+  font-weight: 300; /* Lighter style for 'Our' */
+}
+
+.bold {
+  font-weight: 700; /* Bold style for 'Services' */
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+/* Container untuk kartu layanan */
+.services-container {
+  display: grid; /* Menggunakan grid untuk tata letak kartu */
+  grid-template-columns: repeat(3, 1fr); /* Mengatur 3 kolom untuk kartu */
+  gap: 20px; /* Jarak antara kartu */
+  padding: 20px; /* Ruang di dalam container */
+}
+
+/* Gaya kartu layanan */
+.service-card {
+  background: white; /* Latar belakang putih transparan */
+  border-radius: 40px; /* Sudut membulat */
+  padding: 20px; /* Ruang di dalam kartu */
+  text-align: center; /* Menyelaraskan teks ke tengah */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi saat hover */
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+/* Ikon untuk kartu */
+.service-card i {
+  font-size: 2rem; /* Ukuran ikon */
+  margin-bottom: 10px; /* Jarak antara ikon dan judul */
+  color: #323232; /* Warna ikon */
+  transition: color 0.3s ease; /* Transisi warna saat hover */
+}
+
+/* Efek hover untuk kartu */
+.service-card:hover {
+  transform: scale(1.05); /* Membesarkan kartu sedikit saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
+}
+
+/* Gaya untuk semua service card */
+.service-card h2 {
+  font-size: 1.5rem; /* Ukuran font untuk judul layanan */
+  margin-bottom: 10px; /* Jarak antara judul dan deskripsi */
+}
+
+.service-card p {
+  font-size: 1rem; /* Ukuran font untuk deskripsi layanan */
+}
+
+/* Footer */
+.footer {
+  background-color: #323232; /* Warna latar belakang footer */
+  color: #ffffff; /* Warna teks */
+  padding: 40px 0; /* Ruang vertikal pada footer */
+  margin-top: 150px;
+}
+
+.footer-logo {
+  height: 60px; /* Tinggi logo */
+  color: white;
+}
+
+.footer-description {
+  font-size: 1.2rem; /* Ukuran font untuk deskripsi */
+  max-width: 600px; /* Lebar maksimum untuk deskripsi */
+  margin: 0 auto; /* Memusatkan deskripsi */
+  color: #ffffff; /* Pastikan deskripsi berwarna putih */
+}
+
+.social-icons {
+  display: flex; /* Mengatur sosial media dalam baris */
+  justify-content: center; /* Memusatkan ikon sosial media */
+  gap: 20px; /* Jarak antar ikon */
+}
+
+.social-icon {
+  color: #ffffff; /* Warna ikon sosial media */
+  font-size: 1.5rem; /* Ukuran ikon sosial media */
+  transition: color 0.3s; /* Transisi untuk efek hover */
+}
+
+.social-icon:hover {
+  color: #17a2b8; /* Warna saat hover */
+}
+
+.copyright {
+  font-size: 0.9rem; /* Ukuran font untuk hak cipta */
+  margin-top: 20px; /* Ruang di atas hak cipta */
+  color: #ffffff; /* Warna teks untuk hak cipta */
+}
+
+/* Menyembunyikan dropdown secara default */
+.dropdown-menu {
+  display: none; /* Dropdown tidak terlihat secara default */
+}
+
+/* Menampilkan dropdown saat hover */
+.nav-item:hover .dropdown-menu {
+  display: block; /* Menampilkan dropdown saat hover */
+  border-radius: 10px;
+}
+
+/* Mengatur tampilan item dropdown saat di-hover */
+.dropdown-menu .dropdown-item {
+  border-radius: 5px; /* Menambahkan border radius */
+}
+
+/* Mengatur efek hover pada item dropdown */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #ffeb3b; /* Warna kuning */
+  color: #000; /* Warna teks hitam */
+}
+
+/* Responsiveness untuk Mobile */
+@media (max-width: 767px) {
+  .title {
+    font-size: 2rem; /* Ukuran font lebih kecil untuk mobile */
+    margin-top: 50px; /* Jarak atas lebih kecil untuk mobile */
+  }
+
+  .description {
+    font-size: 1rem; /* Ukuran font deskripsi lebih kecil untuk mobile */
+    margin-bottom: 50px; /* Mengurangi margin bawah untuk mobile */
+  }
+
+  .services-container {
+    grid-template-columns: 1fr; /* 1 kolom untuk mobile */
+    padding: 10px; /* Padding lebih kecil untuk mobile */
+  }
+
+  .service-card {
+    padding: 15px; /* Mengurangi padding untuk mobile */
+    margin-bottom: 10px; /* Mengurangi margin bawah untuk mobile */
+    margin-top: 0; /* Menghapus margin atas negatif untuk mobile */
+  }
+
+  .service-card h2 {
+    font-size: 1.2rem; /* Ukuran font untuk judul lebih kecil di mobile */
+  }
+
+  .service-card p {
+    font-size: 0.9rem; /* Ukuran font deskripsi lebih kecil di mobile */
+  }
+
+  .footer {
+    padding: 20px 0; /* Mengurangi padding pada footer untuk mobile */
+  }
+
+  .footer-description {
+    font-size: 1rem; /* Ukuran font untuk deskripsi footer lebih kecil */
+  }
+
+  .copyright {
+    font-size: 0.8rem; /* Ukuran font untuk hak cipta lebih kecil di mobile */
+  }
+}
+/* Menambahkan margin ke hero section di mobile */
+@media (max-width: 767px) {
+  .hero {
+    margin-top: 40px; /* Menurunkan hero section lebih jauh ke bawah */
+  }
+
+  .hero-image {
+    top: -40px; /* Mengatur posisi gambar jika perlu */
+  }
+
+  .title {
+    font-size: 2.5rem; /* Ukuran font untuk judul di mobile */
+    margin-top: 80px; /* Menambah jarak atas judul */
+  }
+
+  .description {
+    font-size: 1rem; /* Mengatur ukuran font deskripsi untuk mobile */
+  }
+
+  /* Mengatur padding di bawah judul */
+  .services-container {
+    padding: 20px; /* Mengatur padding untuk container layanan */
+  }
+}

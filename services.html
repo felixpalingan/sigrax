@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layanan & Roadmap Implementasi - Sigrax CMMS</title>
+  <meta name="description" content="Layanan konsultasi, kustomisasi SOP, migrasi data, pelatihan teknisi, dan pendampingan implementasi Sigrax CMMS untuk industri Indonesia." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="LOGO SIGRAXX 1.png" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Unified Modern Design System -->
+  <link rel="stylesheet" href="main.css" />
+
+  <style>
+    /* Service Page Specific Accents */
+    .faq-accordion {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-glass-hover);
+    }
+
+    .faq-question {
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-white);
+      user-select: none;
+    }
+
+    .faq-question i {
+      color: var(--primary-gold);
+      font-size: 0.9rem;
+      transition: transform var(--transition-normal);
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.3s ease;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 24px 22px 24px;
+    }
+
+    .faq-answer p {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Modern Glassmorphic Navbar -->
+  <header>
+    <nav class="site-navbar" aria-label="Navigasi Utama">
+      <div class="container navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <img src="LOGO SIGRAXX 1.png" alt="Sigrax CMMS Logo" class="brand-logo" />
+        </a>
+
+        <button class="mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Produk & Modul</a></li>
+          <li><a href="services.html" class="nav-link active">Layanan</a></li>
+          <li class="nav-dropdown">
+            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+            </a>
+            <div class="dropdown-panel">
+              <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                <i class="fab fa-whatsapp"></i> WhatsApp Konsultasi
+              </a>
+              <a href="mailto:info@sigrax.com" class="dropdown-item">
+                <i class="fas fa-envelope"></i> Email Resmi
+              </a>
+              <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                <i class="fab fa-instagram"></i> Instagram Resmi
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section 1: Services Hero -->
+    <section class="hero-section" style="padding-bottom: 40px;">
+      <div class="container text-center">
+        <span class="badge-tag"><i class="fas fa-handshake"></i> Pendampingan End-to-End</span>
+        <h1>Layanan & Solusi Implementasi <span class="gradient-text">Sigrax</span></h1>
+        <p style="max-width: 760px; margin: 0 auto 36px auto; font-size: 1.15rem;">
+          Kami tidak sekadar memberikan software. Tim konsultan dan engineer lokal Sigrax mendampingi seluruh proses mulai dari audit mesin pabrik, migrasi master data, kustomisasi modul, hingga pelatihan tim teknisi di lokasi Anda.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: 6-Step Implementation Roadmap -->
+    <section class="section-py" style="padding-top: 20px;">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag"><i class="fas fa-route"></i> Metodologi Teruji</span>
+          <h2>Roadmap 6 Tahap Implementasi CMMS</h2>
+          <p>
+            Proses terstruktur yang menjamin adopsi software berjalan lancar tanpa mengganggu jalannya operasi harian pabrik.
+          </p>
+        </div>
+
+        <div class="services-flow">
+          <!-- Step 1 -->
+          <div class="service-step-card">
+            <span class="step-number">01</span>
+            <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+            <h3>1. Audit SOP & Asesmen Aset</h3>
+            <p>
+              Menganalisis sistem maintenance eksisting Anda, hierarki lini produksi, frekuensi breakdown mesin, serta merumuskan kebutuhan kustomisasi.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="service-step-card">
+            <span class="step-number">02</span>
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>2. Kustomisasi & Konfigurasi</h3>
+            <p>
+              Menyesuaikan formulir checklist, alur approval tiket perbaikan, role pengguna, dan format laporan agar 100% pas dengan budaya kerja perusahaan.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="service-step-card">
+            <span class="step-number">03</span>
+            <div class="service-icon"><i class="fas fa-database"></i></div>
+            <h3>3. Migrasi & Pembersihan Data</h3>
+            <p>
+              Membantu merapikan dan mengimpor ribuan data mesin, riwayat servis lama, serta katalog inventaris suku cadang dari Excel ke database Sigrax.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="service-step-card">
+            <span class="step-number">04</span>
+            <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+            <h3>4. Pelatihan & Sertifikasi Tim</h3>
+            <p>
+              Training komprehensif bagi operator, teknisi lapangan, admin gudang, dan jajaran manajer dengan modul berbahasa Indonesia yang mudah dipahami.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="service-step-card">
+            <span class="step-number">05</span>
+            <div class="service-icon"><i class="fas fa-rocket"></i></div>
+            <h3>5. Go-Live & On-Site Support</h3>
+            <p>
+              Peluncuran resmi sistem dengan pendampingan langsung teknisi kami di pabrik Anda untuk memastikan transisi berjalan mulus.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="service-step-card">
+            <span class="step-number">06</span>
+            <div class="service-icon"><i class="fas fa-headset"></i></div>
+            <h3>6. Support Berkelanjutan 24/7</h3>
+            <p>
+              Layanan bantuan teknis responsif dan pembaruan sistem berkala tanpa pungutan biaya lisensi tahunan tersembunyi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: FAQ Interactive Accordion -->
+    <section class="section-py" style="background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag"><i class="fas fa-circle-question"></i> Pertanyaan Umum</span>
+          <h2>Frequently Asked <span class="gradient-text">Questions (FAQ)</span></h2>
+          <p>Jawaban atas pertanyaan yang sering diajukan mengenai implementasi dan lisensi Sigrax CMMS.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <div class="faq-question">
+              <span>Apa yang membedakan Sigrax dengan software CMMS luar negeri?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Sigrax dikembangkan 100% di Indonesia, bebas dari biaya recurring subscription tahunan (tanpa annual license fee), mendukung antarmuka dan istilah teknis Bahasa Indonesia, serta didukung tim support lokal yang siap datang langsung ke pabrik Anda.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Berapa lama proses implementasi Sigrax di pabrik kami?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Tergantung kompleksitas dan kesiapan data mesin. Rata-rata implementasi standar memakan waktu 2 hingga 4 minggu, mencakup migrasi data master, konfigurasi SOP khusus, hingga pelatihan seluruh operator dan teknisi.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Apakah data aset mesin lama di Excel bisa dimasukkan ke Sigrax?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Sangat bisa. Kami menyediakan template migrasi data dan tim kami akan membantu membersihkan (*data cleansing*) serta mengimpor seluruh data aset, hierarki lokasi, riwayat maintenance, dan stok spare part ke dalam sistem.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Apakah sistem ini bisa diintegrasikan dengan ERP atau sensor IoT pabrik?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Ya. Sigrax memiliki arsitektur modular dengan dukungan RESTful API yang memungkinkan integrasi dengan sistem ERP (SAP, Oracle, Odoo), sistem SCADA, maupun sensor IoT untuk pemantauan suhu dan getaran mesin otomatis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: High-Impact Consultation CTA Banner -->
+    <section class="section-py" style="padding-top: 20px;">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="badge-tag"><i class="fas fa-handshake"></i> Konsultasi Kebutuhan Pabrik</span>
+          <h2>Konsultasikan Sistem Maintenance Industri Anda Hari Ini</h2>
+          <p>
+            Dapatkan saran dari praktisi manajemen aset kami mengenai cara mereduksi downtime dan mengoptimalkan anggaran perawatan mesin Anda.
+          </p>
+          <div class="btn-group" style="justify-content: center;">
+            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fab fa-whatsapp"></i> Chat WhatsApp Konsultan Kami
+            </a>
+            <a href="mailto:info@sigrax.com" class="btn btn-secondary">
+              <i class="fas fa-envelope"></i> Kirim Email Penawaran
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="LOGO SIGRAXX 1.png" alt="Sigrax CMMS" class="brand-logo" />
+          <p>
+            Solusi Computerized Maintenance Management System (CMMS) terdepan buatan Indonesia. Mengoptimalkan pemeliharaan aset, memaksimalkan produktivitas industri Anda.
+          </p>
+          <div class="social-bar">
+            <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@sigrax.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="features.html">Produk & 11 Modul</a></li>
+            <li><a href="services.html">Layanan & Implementasi</a></li>
+            <li><a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer">Hubungi Kami (WhatsApp)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Layanan Unggulan</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Audit & Asesmen Mesin</a></li>
+            <li><a href="services.html">Custom Modul SOP Pabrik</a></li>
+            <li><a href="services.html">Migrasi Master Data Excel</a></li>
+            <li><a href="services.html">Training & Sertifikasi Tim</a></li>
+            <li><a href="services.html">Pendampingan Go-Live</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontak & Konsultasi</h4>
+          <ul class="footer-links footer-contact-info">
+            <li><i class="fab fa-whatsapp"></i> +62 812-xxxx-xxxx (Fast Response)</li>
+            <li><i class="fas fa-envelope"></i> info@sigrax.com</li>
+            <li><i class="fas fa-location-dot"></i> Indonesia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sigrax. All Rights Reserved. Crafted with pride in Indonesia.</p>
+        <p>Enterprise Asset & Maintenance Management Software</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Zoom Modal Component -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Tutup Preview">&times;</button>
+      <img src="" id="lightboxImg" alt="Preview Screenshot" />
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle">Judul Modul</h4>
+        <p id="lightboxDesc" class="text-secondary" style="font-size: 0.95rem;">Deskripsi detail modul preview.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Interactive Vanilla Script -->
+  <script src="main.js"></script>
+
+  <script>
+    // Simple FAQ Accordion Interactive Trigger
+    document.querySelectorAll('.faq-question').forEach((q) => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
