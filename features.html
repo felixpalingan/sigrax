@@ -3,250 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produk & 11 Modul Lengkap - Sigrax CMMS</title>
-  <meta name="description" content="Eksplorasi 11 modul terpadu Sigrax CMMS untuk manajemen aset, work order, pemeliharaan preventif, inventaris suku cadang, dan analitik pabrik." />
+  <title>Produk &amp; 11 Modul — Sigrax CMMS</title>
+  <meta name="description" content="11 modul terpadu Sigrax CMMS untuk manajemen aset, work order, preventive maintenance, inventaris suku cadang, dan analitik pabrik." />
   <meta name="keywords" content="modul CMMS, modul maintenance pabrik, work order software, inventory suku cadang, preventive maintenance schedule" />
   <meta name="author" content="Sigrax CMMS" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sigrax.com/features.html" />
 
-  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sigrax.com/features.html" />
-  <meta property="og:title" content="Katalog 11 Modul Lengkap - Sigrax CMMS" />
-  <meta property="og:description" content="Solusi lengkap manajemen pemeliharaan pabrik dari level teknisi hingga analitik dashboard manajemen." />
+  <meta property="og:title" content="11 Modul Sigrax CMMS" />
+  <meta property="og:description" content="Manajemen maintenance pabrik dari level teknisi sampai dashboard manajemen." />
   <meta property="og:image" content="assets/screenshots/dashboard.png" />
   <meta property="og:locale" content="id_ID" />
   <meta property="og:site_name" content="Sigrax CMMS" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://sigrax.com/features.html" />
-  <meta name="twitter:title" content="Katalog 11 Modul Lengkap - Sigrax CMMS" />
-  <meta name="twitter:description" content="Solusi lengkap manajemen pemeliharaan pabrik dari level teknisi hingga analitik dashboard manajemen." />
+  <meta name="twitter:title" content="11 Modul Sigrax CMMS" />
+  <meta name="twitter:description" content="Manajemen maintenance pabrik dari level teknisi sampai dashboard manajemen." />
   <meta name="twitter:image" content="assets/screenshots/dashboard.png" />
 
-  <!-- Schema.org JSON-LD Structured Data for Features Catalog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ItemPage",
-    "name": "Katalog 11 Modul Lengkap Sigrax CMMS",
+    "name": "11 Modul Sigrax CMMS",
     "description": "Katalog fitur dan modul software maintenance industri manufaktur di Indonesia.",
-    "url": "https://sigrax.com/features.html",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        { "@type": "SoftwareApplication", "name": "Executive Dashboard", "position": 1 },
-        { "@type": "SoftwareApplication", "name": "Master Data Hub", "position": 2 },
-        { "@type": "SoftwareApplication", "name": "Manajemen Aset & Mesin", "position": 3 },
-        { "@type": "SoftwareApplication", "name": "Hierarki Lokasi Pabrik", "position": 4 },
-        { "@type": "SoftwareApplication", "name": "Work Request Portal", "position": 5 },
-        { "@type": "SoftwareApplication", "name": "Work Order & Eksekusi", "position": 6 },
-        { "@type": "SoftwareApplication", "name": "Material & Parts Request", "position": 7 },
-        { "@type": "SoftwareApplication", "name": "Inventaris Gudang & Tools", "position": 8 },
-        { "@type": "SoftwareApplication", "name": "Preventive Maintenance Scheduler", "position": 9 },
-        { "@type": "SoftwareApplication", "name": "Manajemen Tim & Teknisi", "position": 10 },
-        { "@type": "SoftwareApplication", "name": "Laporan & Analitik Audit", "position": 11 }
-      ]
-    }
+    "url": "https://sigrax.com/features.html"
   }
   </script>
-  
-  <!-- Favicon -->
+
   <link rel="icon" type="image/png" href="assets/brand/logo.png" />
-  
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  <!-- Unified Modern Design System -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <style>
-    /* Specific Styles for Features Explorer */
-    .filter-pills-bar {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    .filter-pill {
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid var(--border-glass);
-      color: var(--text-secondary);
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .filter-pill:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-white);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .filter-pill.active {
-      background: var(--gold-gradient);
-      color: var(--text-dark);
-      border-color: transparent;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
-    }
-
-    .modules-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    .module-card {
-      background: linear-gradient(160deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all var(--transition-normal);
-      backdrop-filter: blur(14px);
-    }
-
-    .module-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-glass-hover);
-      box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 158, 11, 0.15);
-    }
-
-    .module-card-img-wrap {
-      height: 260px;
-      background: #020617;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-bottom: 1px solid var(--border-glass);
-    }
-
-    .module-card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-smooth);
-    }
-
-    .module-card:hover .module-card-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .module-badge-category {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(10, 14, 23, 0.85);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      color: var(--primary-gold-light);
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      backdrop-filter: blur(8px);
-      z-index: 5;
-    }
-
-    .module-card-body {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .module-card-body h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .module-card-body h3 i {
-      color: var(--primary-gold);
-      font-size: 1.2rem;
-    }
-
-    .module-card-body p {
-      font-size: 0.96rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .module-card-features {
-      list-style: none;
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-glass);
-    }
-
-    .module-card-features li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .module-card-features li i {
-      color: var(--primary-gold);
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 900px) {
-      .modules-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Modern Glassmorphic Navbar -->
   <header>
-    <nav class="site-navbar" aria-label="Navigasi Utama">
+    <nav class="site-navbar">
       <div class="container navbar-inner">
         <a href="index.html" class="navbar-brand">
-          <img src="assets/brand/logo.png" alt="Sigrax CMMS Logo" class="brand-logo" />
+          <img src="assets/brand/logo.png" alt="Sigrax CMMS" class="brand-logo" />
         </a>
-
-        <button class="mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
+        <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </button>
-
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="features.html" class="nav-link active">Produk & Modul</a></li>
+          <li><a href="features.html" class="nav-link active">Produk</a></li>
           <li><a href="services.html" class="nav-link">Layanan</a></li>
           <li class="nav-dropdown">
-            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              <i class="fab fa-whatsapp"></i> Hubungi Kami <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
-            </a>
+            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Hubungi Kami</a>
             <div class="dropdown-panel">
-              <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                <i class="fab fa-whatsapp"></i> WhatsApp Konsultasi
-              </a>
-              <a href="mailto:info@sigrax.com" class="dropdown-item">
-                <i class="fas fa-envelope"></i> Email Resmi
-              </a>
-              <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                <i class="fab fa-instagram"></i> Instagram Resmi
-              </a>
+              <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a href="mailto:info@sigrax.com" class="dropdown-item"><i class="fas fa-envelope"></i> Email</a>
+              <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer" class="dropdown-item"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
           </li>
         </ul>
@@ -255,246 +66,205 @@
   </header>
 
   <main>
-    <!-- Section: Header Explorer -->
-    <section class="hero-section" style="padding-bottom: 30px;">
-      <div class="container text-center">
-        <span class="badge-tag"><i class="fas fa-cubes"></i> Ekosistem Terpadu</span>
-        <h1>Katalog 11 Modul Lengkap <span class="gradient-text">Sigrax CMMS</span></h1>
-        <p style="max-width: 760px; margin: 0 auto 36px auto; font-size: 1.15rem;">
-          Dirancang menyeluruh dari level operasional teknisi di lantai pabrik hingga dashboard pengambilan keputusan manajemen tingkat atas.
-        </p>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--nav-height) + 48px); padding-bottom: 32px;">
+      <div class="container" style="text-align: center;">
+        <span class="section-label">Katalog Produk</span>
+        <h1>11 modul terintegrasi</h1>
+        <p style="max-width: 560px; margin: 12px auto 0;">Dari level teknisi di lantai pabrik sampai dashboard untuk manajemen.</p>
+      </div>
+    </section>
 
-        <!-- Filter Pills Bar -->
-        <div class="filter-pills-bar">
-          <button class="filter-pill active" data-category="all">
-            <i class="fas fa-border-all"></i> Semua Modul (11)
-          </button>
-          <button class="filter-pill" data-category="asset">
-            <i class="fas fa-industry"></i> Aset & Lokasi (4)
-          </button>
-          <button class="filter-pill" data-category="maintenance">
-            <i class="fas fa-screwdriver-wrench"></i> Maintenance & WO (3)
-          </button>
-          <button class="filter-pill" data-category="inventory">
-            <i class="fas fa-boxes-stacked"></i> Suku Cadang & Gudang (2)
-          </button>
-          <button class="filter-pill" data-category="analytics">
-            <i class="fas fa-chart-line"></i> Dashboard & Laporan (2)
-          </button>
+    <!-- Filter -->
+    <section style="padding-bottom: 16px;">
+      <div class="container">
+        <div class="filter-bar">
+          <button class="filter-pill active" data-category="all">Semua (11)</button>
+          <button class="filter-pill" data-category="asset">Aset &amp; Lokasi (4)</button>
+          <button class="filter-pill" data-category="maintenance">Maintenance (3)</button>
+          <button class="filter-pill" data-category="inventory">Suku Cadang (2)</button>
+          <button class="filter-pill" data-category="analytics">Dashboard &amp; Laporan (2)</button>
         </div>
       </div>
     </section>
 
-    <!-- Section: All 11 Modules Grid -->
-    <section class="section-py" style="padding-top: 20px;">
+    <!-- Modules Grid -->
+    <section class="section" style="padding-top: 0;">
       <div class="container">
         <div class="modules-grid">
 
-          <!-- 1. Executive Dashboard -->
+          <!-- 1. Dashboard -->
           <div class="module-card" data-category="analytics">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/dashboard.png" data-title="1. Executive Dashboard Module" data-desc="Visualisasi real-time performa pemeliharaan, rekap work order, dan tren biaya perawatan.">
-              <span class="module-badge-category">Dashboard & Laporan</span>
-              <img src="assets/screenshots/dashboard.png" alt="Executive Dashboard Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/dashboard.png" data-title="Executive Dashboard" data-desc="Visualisasi real-time performa maintenance, rekap work order, dan tren biaya.">
+              <img src="assets/screenshots/dashboard.png" alt="Executive Dashboard" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-chart-pie"></i> Executive Dashboard</h3>
-              <p>
-                Modul utama pertama saat membuka aplikasi. Memberikan ringkasan komprehensif atas biaya yang dikeluarkan, status pekerjaan pemeliharaan, serta performa uptime pabrik.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Monitoring metrik real-time & status breakdown</li>
+              <span class="module-tag">Dashboard &amp; Laporan</span>
+              <h3>Executive Dashboard</h3>
+              <p>Ringkasan biaya, status work order, dan performa uptime pabrik secara real-time.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Monitoring metrik real-time &amp; status breakdown</li>
                 <li><i class="fas fa-check"></i> Rekapitulasi pemakaian biaya suku cadang</li>
               </ul>
             </div>
           </div>
 
-          <!-- 2. Master Data Module -->
+          <!-- 2. Master Data -->
           <div class="module-card" data-category="asset">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/sites (tempat).png" data-title="2. Master Data Module" data-desc="Database terpusat semua data inventaris mesin, karyawan, lokasi, dan standar satuan.">
-              <span class="module-badge-category">Aset & Lokasi</span>
-              <img src="assets/screenshots/sites (tempat).png" alt="Master Data Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/sites (tempat).png" data-title="Master Data" data-desc="Database terpusat semua aset, karyawan, lokasi, dan satuan.">
+              <img src="assets/screenshots/sites (tempat).png" alt="Master Data" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-database"></i> Master Data Hub</h3>
-              <p>
-                Pusat data terintegrasi yang menyimpan seluruh informasi aset, lokasi penempatan, data teknisi, vendor penyedia part, satuan unit, dan kategori mesin pabrik.
-              </p>
-              <ul class="module-card-features">
+              <span class="module-tag">Aset &amp; Lokasi</span>
+              <h3>Master Data</h3>
+              <p>Pusat data terintegrasi — aset, lokasi, teknisi, vendor, dan kategori mesin pabrik.</p>
+              <ul class="module-features">
                 <li><i class="fas fa-check"></i> Standardisasi kodefikasi aset otomatis</li>
                 <li><i class="fas fa-check"></i> Sentralisasi database seluruh lini produksi</li>
               </ul>
             </div>
           </div>
 
-          <!-- 3. Asset Module -->
+          <!-- 3. Aset -->
           <div class="module-card" data-category="asset">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/assets.png" data-title="3. Asset & Machine Module" data-desc="Spesifikasi teknis mendalam per mesin, riwayat breakdown, dan manual digital.">
-              <span class="module-badge-category">Aset & Lokasi</span>
-              <img src="assets/screenshots/assets.png" alt="Asset Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/assets.png" data-title="Manajemen Aset" data-desc="Spesifikasi teknis per mesin, riwayat breakdown, dan manual digital.">
+              <img src="assets/screenshots/assets.png" alt="Asset Management" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-industry"></i> Manajemen Aset & Mesin</h3>
-              <p>
-                Kelola seluruh profil mesin manufaktur. Lacak riwayat perbaikan, masa garansi, spesifikasi teknis komponen, serta nilai depresiasi buku aset secara akurat.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Rekam jejak servis lengkap per nomor seri</li>
+              <span class="module-tag">Aset &amp; Lokasi</span>
+              <h3>Manajemen Aset &amp; Mesin</h3>
+              <p>Profil mesin lengkap — riwayat perbaikan, garansi, spesifikasi komponen, dan depresiasi.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Rekam jejak servis per nomor seri</li>
                 <li><i class="fas fa-check"></i> Riwayat pergantian spare part per mesin</li>
               </ul>
             </div>
           </div>
 
-          <!-- 4. Location Hierarchy Module -->
+          <!-- 4. Lokasi -->
           <div class="module-card" data-category="asset">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/sites 2.png" data-title="4. Location & Plant Hierarchy" data-desc="Hierarki spasial gedung, plant, lantai, hingga lini produksi spesifik.">
-              <span class="module-badge-category">Aset & Lokasi</span>
-              <img src="assets/screenshots/sites 2.png" alt="Location Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/sites 2.png" data-title="Hierarki Lokasi" data-desc="Hierarki gedung, plant, lantai, sampai lini produksi.">
+              <img src="assets/screenshots/sites 2.png" alt="Location Hierarchy" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-map-location-dot"></i> Hierarki Lokasi & Fasilitas</h3>
-              <p>
-                Pemetaan struktur lokasi penempatan aset secara teratur (Plant &gt; Building &gt; Line &gt; Station). Memudahkan teknisi menemukan titik mesin yang membutuhkan penanganan.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Struktur pohon hierarki lokasi bertingkat</li>
-                <li><i class="fas fa-check"></i> Filter cepat aset berdasarkan area pabrik</li>
+              <span class="module-tag">Aset &amp; Lokasi</span>
+              <h3>Hierarki Lokasi</h3>
+              <p>Pemetaan struktur penempatan aset (Plant → Building → Line → Station).</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Struktur pohon lokasi bertingkat</li>
+                <li><i class="fas fa-check"></i> Filter aset berdasarkan area pabrik</li>
               </ul>
             </div>
           </div>
 
-          <!-- 5. Work Request Module -->
+          <!-- 5. Work Request -->
           <div class="module-card" data-category="maintenance">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/work req.png" data-title="5. Work Request Module" data-desc="Formulir pengajuan tiket perbaikan cepat dari operator lapangan ke tim maintenance.">
-              <span class="module-badge-category">Maintenance & WO</span>
-              <img src="assets/screenshots/work req.png" alt="Work Request Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/work req.png" data-title="Work Request" data-desc="Formulir pengajuan tiket perbaikan dari operator ke maintenance.">
+              <img src="assets/screenshots/work req.png" alt="Work Request" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-ticket"></i> Work Request Portal</h3>
-              <p>
-                Media pelaporan cepat bagi operator lini produksi ketika menemukan kendala atau anomali pada mesin. Menghilangkan birokrasi formulir kertas yang lambat.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Pengajuan tiket kerusakan instan dari lapangan</li>
-                <li><i class="fas fa-check-circle"></i> Prioritas tiket (Low, Medium, High, Emergency)</li>
+              <span class="module-tag">Maintenance</span>
+              <h3>Work Request</h3>
+              <p>Pelaporan cepat dari operator saat menemukan kendala mesin. Tanpa formulir kertas.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Pengajuan tiket kerusakan instan</li>
+                <li><i class="fas fa-check"></i> Prioritas: Low, Medium, High, Emergency</li>
               </ul>
             </div>
           </div>
 
-          <!-- 6. Work Order Module -->
+          <!-- 6. Work Order -->
           <div class="module-card" data-category="maintenance">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/completed task.png" data-title="6. Work Order Module" data-desc="Penugasan teknisi, instruksi perbaikan step-by-step, dan pencatatan jam kerja.">
-              <span class="module-badge-category">Maintenance & WO</span>
-              <img src="assets/screenshots/completed task.png" alt="Work Order Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/completed task.png" data-title="Work Order" data-desc="Penugasan teknisi, instruksi perbaikan, dan pencatatan jam kerja.">
+              <img src="assets/screenshots/completed task.png" alt="Work Order" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-clipboard-check"></i> Work Order & Eksekusi</h3>
-              <p>
-                Pusat manajemen penugasan tugas teknisi. Melacak status pelaksanaan pekerjaan (*Open*, *In Progress*, *Pending Parts*, *Completed*) hingga verifikasi supervisor.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Checklist perbaikan digital dengan foto bukti</li>
-                <li><i class="fas fa-check"></i> Pencatatan jam kerja teknisi & suku cadang</li>
+              <span class="module-tag">Maintenance</span>
+              <h3>Work Order &amp; Eksekusi</h3>
+              <p>Manajemen penugasan teknisi — dari Open, In Progress, sampai Completed dan verifikasi supervisor.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Checklist perbaikan digital dengan foto</li>
+                <li><i class="fas fa-check"></i> Pencatatan jam kerja &amp; suku cadang terpakai</li>
               </ul>
             </div>
           </div>
 
-          <!-- 7. Material Request Module -->
+          <!-- 7. Material Request -->
           <div class="module-card" data-category="inventory">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/image.41.jpg" data-title="7. Material Request Module" data-desc="Permintaan suku cadang langsung terhubung ke nomor Work Order aktif.">
-              <span class="module-badge-category">Suku Cadang & Gudang</span>
-              <img src="assets/screenshots/image.41.jpg" alt="Material Request Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/image.41.jpg" data-title="Material Request" data-desc="Permintaan suku cadang terhubung ke Work Order aktif.">
+              <img src="assets/screenshots/image.41.jpg" alt="Material Request" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-cart-flatbed"></i> Material & Parts Request</h3>
-              <p>
-                Permintaan suku cadang terintegrasi langsung dengan nomor Work Order. Menjamin akurasi pemakaian spare part dan alokasi biaya perawatan per mesin.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Validasi ketersediaan stok di gudang maintenance</li>
-                <li><i class="fas fa-check"></i> Alur approval pengambilan part oleh supervisor</li>
+              <span class="module-tag">Suku Cadang</span>
+              <h3>Material Request</h3>
+              <p>Request suku cadang terintegrasi langsung dengan nomor Work Order untuk akurasi biaya per mesin.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Validasi ketersediaan stok gudang</li>
+                <li><i class="fas fa-check"></i> Approval pengambilan part oleh supervisor</li>
               </ul>
             </div>
           </div>
 
-          <!-- 8. Inventory & Parts Module -->
+          <!-- 8. Inventory -->
           <div class="module-card" data-category="inventory">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/PART.png" data-title="8. Inventory & Stock Module" data-desc="Manajemen stok minimum, mutasi suku cadang, dan pencatatan tools teknisi.">
-              <span class="module-badge-category">Suku Cadang & Gudang</span>
-              <img src="assets/screenshots/PART.png" alt="Inventory Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/PART.png" data-title="Inventaris Gudang" data-desc="Stok minimum, mutasi suku cadang, dan tools teknisi.">
+              <img src="assets/screenshots/PART.png" alt="Inventory" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-boxes-stacked"></i> Inventaris Gudang & Tools</h3>
-              <p>
-                Kelola stok suku cadang, alat kerja teknisi, dan bahan habis pakai. Dilengkapi notifikasi stok menipis (*reorder point*) untuk mencegah keterlambatan perbaikan.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Peringatan otomatis batas stok minimum (*Min-Max*)</li>
-                <li><i class="fas fa-check"></i> Riwayat mutasi masuk, keluar, dan penyesuaian stok</li>
+              <span class="module-tag">Suku Cadang</span>
+              <h3>Inventaris Gudang</h3>
+              <p>Kelola stok suku cadang dan alat kerja. Notifikasi otomatis saat stok menipis.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Peringatan batas stok minimum (Min-Max)</li>
+                <li><i class="fas fa-check"></i> Riwayat mutasi masuk, keluar, penyesuaian</li>
               </ul>
             </div>
           </div>
 
-          <!-- 9. Preventive Maintenance Module -->
+          <!-- 9. Preventive -->
           <div class="module-card" data-category="maintenance">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/image_43.png" data-title="9. Preventive Maintenance Module" data-desc="Jadwal inspeksi berkala otomatis berdasarkan siklus waktu atau jam kerja mesin.">
-              <span class="module-badge-category">Maintenance & WO</span>
-              <img src="assets/screenshots/image_43.png" alt="Preventive Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/image_43.png" data-title="Preventive Maintenance" data-desc="Jadwal inspeksi otomatis berdasarkan waktu atau running hours.">
+              <img src="assets/screenshots/image_43.png" alt="Preventive Maintenance" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-calendar-check"></i> Preventive Maintenance</h3>
-              <p>
-                Otomatisasi jadwal servis preventif dan inspeksi berkala. Mencegah kerusakan sebelum terjadi, memperpanjang usia mesin, dan menjaga kestabilan output pabrik.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Penjadwalan kalender atau berbasis Running Hours</li>
-                <li><i class="fas fa-check"></i> Generate Work Order otomatis menjelang jatuh tempo</li>
+              <span class="module-tag">Maintenance</span>
+              <h3>Preventive Maintenance</h3>
+              <p>Jadwal servis preventif otomatis. Cegah kerusakan sebelum terjadi, perpanjang usia mesin.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Jadwal kalender atau berbasis Running Hours</li>
+                <li><i class="fas fa-check"></i> Auto-generate Work Order saat jatuh tempo</li>
               </ul>
             </div>
           </div>
 
-          <!-- 10. Employee & Technician Module -->
+          <!-- 10. Employee -->
           <div class="module-card" data-category="asset">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/employee.png" data-title="10. Technician & HR Module" data-desc="Manajemen regu teknisi, spesialisasi keahlian, shift kerja, dan beban kerja harian.">
-              <span class="module-badge-category">Aset & Lokasi</span>
-              <img src="assets/screenshots/employee.png" alt="Employee Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/employee.png" data-title="Manajemen Teknisi" data-desc="Data teknisi, keahlian, shift, dan beban kerja.">
+              <img src="assets/screenshots/employee.png" alt="Employee Management" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-users-gear"></i> Manajemen Tim & Teknisi</h3>
-              <p>
-                Kelola data teknisi, sertifikasi keahlian (mekanik, elektrik, automasi), pembagian shift, dan beban kerja harian agar distribusi penugasan seimbang.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Pemetaan keahlian teknisi sesuai jenis mesin</li>
-                <li><i class="fas fa-check"></i> Evaluasi produktivitas & waktu respon teknisi</li>
+              <span class="module-tag">Aset &amp; Lokasi</span>
+              <h3>Manajemen Tim</h3>
+              <p>Data teknisi, sertifikasi keahlian, pembagian shift, dan beban kerja harian.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Pemetaan keahlian sesuai jenis mesin</li>
+                <li><i class="fas fa-check"></i> Evaluasi produktivitas &amp; waktu respon</li>
               </ul>
             </div>
           </div>
 
-          <!-- 11. Report Module -->
+          <!-- 11. Laporan -->
           <div class="module-card" data-category="analytics">
-            <div class="module-card-img-wrap" data-lightbox="true" data-src="assets/screenshots/image_47.png" data-title="11. Reporting & Analytics Module" data-desc="Ekspor laporan audit, evaluasi MTBF, MTTR, dan analisis tren biaya perbaikan.">
-              <span class="module-badge-category">Dashboard & Laporan</span>
-              <img src="assets/screenshots/image_47.png" alt="Report Module Sigrax" />
-              <div class="image-zoom-overlay"><i class="fas fa-magnifying-glass-plus"></i> Perbesar</div>
+            <div class="module-card-image" data-lightbox="true" data-src="assets/screenshots/image_47.png" data-title="Laporan &amp; Analitik" data-desc="Laporan audit, evaluasi MTBF/MTTR, analisis tren biaya.">
+              <img src="assets/screenshots/image_47.png" alt="Reports &amp; Analytics" />
             </div>
             <div class="module-card-body">
-              <h3><i class="fas fa-file-chart-column"></i> Laporan & Analitik Audit</h3>
-              <p>
-                Ekspor laporan audit ISO, rekap biaya bulanan, analisis penyebab kerusakan dominan, dan laporan evaluasi KPI pemeliharaan dalam format PDF/Excel siap cetak.
-              </p>
-              <ul class="module-card-features">
-                <li><i class="fas fa-check"></i> Ekspor data fleksibel ke Excel & PDF</li>
-                <li><i class="fas fa-check"></i> Analisis biaya pemeliharaan per departemen</li>
+              <span class="module-tag">Dashboard &amp; Laporan</span>
+              <h3>Laporan &amp; Analitik</h3>
+              <p>Ekspor laporan audit ISO, rekap biaya bulanan, dan KPI maintenance dalam PDF/Excel.</p>
+              <ul class="module-features">
+                <li><i class="fas fa-check"></i> Ekspor data ke Excel &amp; PDF</li>
+                <li><i class="fas fa-check"></i> Analisis biaya per departemen</li>
               </ul>
             </div>
           </div>
@@ -503,94 +273,79 @@
       </div>
     </section>
 
-    <!-- Section: CTA Banner -->
-    <section class="section-py" style="padding-top: 20px;">
+    <!-- CTA -->
+    <section class="section" style="padding-top: 0;">
       <div class="container">
         <div class="cta-banner">
-          <span class="badge-tag"><i class="fas fa-sliders"></i> Butuh Modul Custom?</span>
-          <h2>Kami Siap Menyesuaikan Modul dengan SOP Pabrik Anda</h2>
-          <p>
-            Hubungi konsultan Sigrax untuk demo langsung dan penyesuaian alur kerja sesuai standar industri Anda.
-          </p>
+          <h2>Butuh modul custom?</h2>
+          <p>Kami bisa menyesuaikan modul sesuai SOP dan alur kerja pabrik Anda.</p>
           <div class="btn-group" style="justify-content: center;">
             <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <i class="fab fa-whatsapp"></i> Jadwalkan Demo Live via WhatsApp
+              <i class="fab fa-whatsapp"></i> Jadwalkan Demo
             </a>
-            <a href="services.html" class="btn btn-secondary">
-              <i class="fas fa-screwdriver-wrench"></i> Pelajari Layanan Implementasi
-            </a>
+            <a href="services.html" class="btn btn-secondary">Lihat layanan →</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Modern Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/brand/logo.png" alt="Sigrax CMMS" class="brand-logo" />
-          <p>
-            Solusi Computerized Maintenance Management System (CMMS) terdepan buatan Indonesia. Mengoptimalkan pemeliharaan aset, memaksimalkan produktivitas industri Anda.
-          </p>
-          <div class="social-bar">
-            <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:info@sigrax.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <p>Software CMMS buatan Indonesia untuk manajemen maintenance dan aset pabrik.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@sigrax.com"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-
         <div class="footer-col">
           <h4>Navigasi</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="features.html">Produk & 11 Modul</a></li>
-            <li><a href="services.html">Layanan & Implementasi</a></li>
-            <li><a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer">Hubungi Kami (WhatsApp)</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Produk</a></li>
+            <li><a href="services.html">Layanan</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h4>Kategori Modul</h4>
+          <h4>Modul</h4>
           <ul class="footer-links">
-            <li><a href="#" class="filter-pill" data-category="asset" style="padding: 0; background: none; border: none; font-weight: normal;">Aset & Lokasi Pabrik</a></li>
-            <li><a href="#" class="filter-pill" data-category="maintenance" style="padding: 0; background: none; border: none; font-weight: normal;">Work Order & Perbaikan</a></li>
-            <li><a href="#" class="filter-pill" data-category="inventory" style="padding: 0; background: none; border: none; font-weight: normal;">Suku Cadang & Gudang</a></li>
-            <li><a href="#" class="filter-pill" data-category="analytics" style="padding: 0; background: none; border: none; font-weight: normal;">Dashboard & Laporan</a></li>
+            <li><a href="features.html">Dashboard</a></li>
+            <li><a href="features.html">Work Order</a></li>
+            <li><a href="features.html">Preventive</a></li>
+            <li><a href="features.html">Inventaris</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h4>Kontak & Konsultasi</h4>
-          <ul class="footer-links footer-contact-info">
-            <li><i class="fab fa-whatsapp"></i> +62 812-xxxx-xxxx (Fast Response)</li>
-            <li><i class="fas fa-envelope"></i> info@sigrax.com</li>
-            <li><i class="fas fa-location-dot"></i> Indonesia</li>
+          <h4>Kontak</h4>
+          <ul class="footer-links footer-contact">
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.link/18xqmd" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@sigrax.com">info@sigrax.com</a></li>
+            <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/sigraxcmms" target="_blank" rel="noopener noreferrer">@sigraxcmms</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2026 Sigrax CMMS. All Rights Reserved. Crafted with pride in Indonesia.</p>
-        <p>Enterprise Asset & Maintenance Management Software</p>
+        <p>&copy; 2026 Sigrax CMMS. All rights reserved.</p>
+        <p>Buatan Indonesia</p>
       </div>
     </div>
   </footer>
 
-  <!-- Lightbox Zoom Modal Component -->
   <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
     <div class="lightbox-content">
-      <button class="lightbox-close" aria-label="Tutup Preview">&times;</button>
-      <img src="" id="lightboxImg" alt="Preview Screenshot" />
+      <button class="lightbox-close" aria-label="Tutup">&times;</button>
+      <img src="" id="lightboxImg" alt="Preview" />
       <div class="lightbox-caption">
-        <h4 id="lightboxTitle">Judul Modul</h4>
-        <p id="lightboxDesc" class="text-secondary" style="font-size: 0.95rem;">Deskripsi detail modul preview.</p>
+        <h4 id="lightboxTitle"></h4>
+        <p id="lightboxDesc" class="text-muted" style="font-size: 0.85rem;"></p>
       </div>
     </div>
   </div>
 
-  <!-- Modern Interactive Vanilla Script -->
   <script src="js/main.js"></script>
 </body>
 </html>
