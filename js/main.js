@@ -1,14 +1,25 @@
 /**
- * Sigrax CMMS — Clean Modern Interactive Logic
- * Vanilla JavaScript, zero external dependencies
+ * Sigrax CMMS — Enterprise B2B Interactive Suite
+ * Vanilla ES6+, High-Performance & Accessible
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Mobile Menu Toggle
+  // 1. Sticky Navigation Scroll State
+  const siteHeader = document.querySelector('header');
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      siteHeader?.classList.add('scrolled');
+    } else {
+      siteHeader?.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // 2. Mobile Menu Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navLinks = document.querySelector('.nav-links');
-  const siteNavbar = document.querySelector('.site-navbar');
 
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
@@ -20,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close mobile menu on clicking outside or on a link
+    // Close on click outside
     document.addEventListener('click', (e) => {
-      if (siteNavbar && !siteNavbar.contains(e.target) && navLinks.classList.contains('open')) {
+      if (siteHeader && !siteHeader.contains(e.target) && navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
         mobileToggle.setAttribute('aria-expanded', 'false');
         const icon = mobileToggle.querySelector('i');
@@ -31,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Interactive Product Showcase Tabs (Home Page)
-  const tabButtons = document.querySelectorAll('.tab-nav-btn');
+  // 3. Interactive Product Showcase Tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
 
   if (tabButtons.length > 0 && tabPanels.length > 0) {
@@ -40,11 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-target');
 
-        // Update active tab buttons
         tabButtons.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Show matching tab panel
         tabPanels.forEach((panel) => {
           if (panel.id === targetId) {
             panel.classList.add('active');
@@ -56,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Category Filter (Features / Products Page)
+  // 4. Features Page Category Filter
   const filterButtons = document.querySelectorAll('.filter-btn');
   const moduleCards = document.querySelectorAll('.module-item-card');
 
@@ -80,14 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. FAQ Accordion (Services Page)
+  // 5. FAQ Accordion Logic
   const faqToggleButtons = document.querySelectorAll('.faq-toggle-btn');
 
   if (faqToggleButtons.length > 0) {
     faqToggleButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const currentItem = btn.closest('.faq-accordion-item');
-        const isOpen = currentItem.classList.contains('open');
+        const isOpen = currentItem?.classList.contains('open');
 
         // Close all items
         document.querySelectorAll('.faq-accordion-item').forEach((item) => {
@@ -97,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Toggle current item
-        if (!isOpen) {
+        if (!isOpen && currentItem) {
           currentItem.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
         }
@@ -105,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Image Lightbox Zoom Modal
+  // 6. Accessible Lightbox Image Preview Modal
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxTitle = document.getElementById('lightboxTitle');
@@ -116,9 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (lightboxModal && lightboxImg) {
     triggerElements.forEach((trigger) => {
-      trigger.addEventListener('click', () => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
         const src = trigger.getAttribute('data-src') || trigger.querySelector('img')?.src;
-        const title = trigger.getAttribute('data-title') || 'Pratinjau Screenshot';
+        const title = trigger.getAttribute('data-title') || 'Pratinjau Screenshot Sistem';
         const desc = trigger.getAttribute('data-desc') || '';
 
         if (src) {
@@ -149,7 +159,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Smooth Scroll for in-page anchors
+  // 7. Scroll Reveal Animation via IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal-up');
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.1
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('in-view'));
+  }
+
+  // 8. Smooth Scroll for Anchor Links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -164,4 +194,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
 });
